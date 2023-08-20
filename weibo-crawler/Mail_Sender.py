@@ -24,8 +24,8 @@ def send_email():
 
     # 生成发送邮件的内容
     msg = MIMEMultipart()
-    msg['From'] = "179807648@qq.com"
-    msg['To'] = "13488753641@163.com, 179807648@qq.com"
+    msg['From'] = "YOUR MAIL ADDRESS"
+    msg['To'] = "YOUR MAIL ADDRESS, YOUR MAIL ADDRESS"
     msg['Subject'] = f"人工智能行业大事件日报 - {date_str}"
 
     body = f"早安，今天是 {date_str} " \
@@ -65,8 +65,7 @@ def send_email():
     # 发送邮件
     email_server = smtplib.SMTP('smtp.qq.com', 587)  # 使用你的邮件服务器和端口号
     email_server.starttls()
-    email_server.login("179807648@qq.com", "zlftnvbaoocccaje")  # 使用你的邮箱地址和密码进行登录
-    # email_server.login("bot74862@gmail.com", "up99rwHMj7M&ULKD")  # 使用你的邮箱地址和密码进行登录
+    email_server.login("YOUR MAIL ADDRESS", "YOUR PASSWORD")  # 使用你的邮箱地址和密码进行登录
 
     email_server.send_message(msg)
     email_server.quit()
