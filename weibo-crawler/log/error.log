@@ -1,0 +1,156 @@
+2023-08-14 23:42:38,882 - ERROR - weibo.py[:2008] - config.json 格式不正确，请参考 https://github.com/dataabc/weibo-crawler#3程序设置
+2023-08-15 10:08:51,808 - ERROR - weibo.py[:865] - HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /detail/4932755522060795 (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(54, 'Connection reset by peer')))
+Traceback (most recent call last):
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 700, in urlopen
+    self._prepare_proxy(conn)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 994, in _prepare_proxy
+    conn.connect()
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connection.py", line 424, in connect
+    tls_in_tls=tls_in_tls,
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 450, in ssl_wrap_socket
+    sock, context, tls_in_tls, server_hostname=server_hostname
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 412, in wrap_socket
+    session=session
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 853, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 1117, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/adapters.py", line 497, in send
+    chunked=chunked,
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 786, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /detail/4932755522060795 (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(54, 'Connection reset by peer')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bicaihua/PycharmProjects/Weibo/weibo-crawler/weibo.py", line 843, in get_one_weibo
+    retweet = self.get_long_weibo(retweet_id)
+  File "/Users/bicaihua/PycharmProjects/Weibo/weibo-crawler/weibo.py", line 414, in get_long_weibo
+    html = requests.get(url, headers=self.headers, verify=False).text
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/adapters.py", line 513, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /detail/4932755522060795 (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(54, 'Connection reset by peer')))
+2023-08-15 18:18:42,488 - ERROR - weibo.py[:865] - HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /detail/4934492677210305 (Caused by ProxyError('Cannot connect to proxy.', OSError(0, 'Error')))
+Traceback (most recent call last):
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 700, in urlopen
+    self._prepare_proxy(conn)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 994, in _prepare_proxy
+    conn.connect()
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connection.py", line 424, in connect
+    tls_in_tls=tls_in_tls,
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 450, in ssl_wrap_socket
+    sock, context, tls_in_tls, server_hostname=server_hostname
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 412, in wrap_socket
+    session=session
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 853, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 1117, in do_handshake
+    self._sslobj.do_handshake()
+OSError: [Errno 0] Error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/adapters.py", line 497, in send
+    chunked=chunked,
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 786, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /detail/4934492677210305 (Caused by ProxyError('Cannot connect to proxy.', OSError(0, 'Error')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "weibo.py", line 855, in get_one_weibo
+    weibo = self.get_long_weibo(weibo_id)
+  File "weibo.py", line 414, in get_long_weibo
+    html = requests.get(url, headers=self.headers, verify=False).text
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/adapters.py", line 513, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /detail/4934492677210305 (Caused by ProxyError('Cannot connect to proxy.', OSError(0, 'Error')))
+2023-08-15 18:20:13,783 - ERROR - weibo.py[:1218] - HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /api/container/getIndex?containerid=2304131727858283&page=4 (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(54, 'Connection reset by peer')))
+Traceback (most recent call last):
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 700, in urlopen
+    self._prepare_proxy(conn)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 994, in _prepare_proxy
+    conn.connect()
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connection.py", line 424, in connect
+    tls_in_tls=tls_in_tls,
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 450, in ssl_wrap_socket
+    sock, context, tls_in_tls, server_hostname=server_hostname
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 412, in wrap_socket
+    session=session
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 853, in _create
+    self.do_handshake()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ssl.py", line 1117, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/adapters.py", line 497, in send
+    chunked=chunked,
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 786, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /api/container/getIndex?containerid=2304131727858283&page=4 (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(54, 'Connection reset by peer')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "weibo.py", line 1086, in get_one_page
+    js = self.get_weibo_json(page)
+  File "weibo.py", line 225, in get_weibo_json
+    js, _ = self.get_json(params)
+  File "weibo.py", line 210, in get_json
+    r = requests.get(url, params=params, headers=self.headers, verify=False)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/bicaihua/PycharmProjects/Weibo/venv/lib/python3.7/site-packages/requests/adapters.py", line 513, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='m.weibo.cn', port=443): Max retries exceeded with url: /api/container/getIndex?containerid=2304131727858283&page=4 (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(54, 'Connection reset by peer')))
+2023-08-15 18:25:13,310 - ERROR - weibo.py[:2008] - config.json 格式不正确，请参考 https://github.com/dataabc/weibo-crawler#3程序设置
+2023-08-15 18:25:38,114 - ERROR - weibo.py[:2008] - config.json 格式不正确，请参考 https://github.com/dataabc/weibo-crawler#3程序设置
+2023-08-17 09:06:43,971 - ERROR - weibo.py[:2008] - config.json 格式不正确，请参考 https://github.com/dataabc/weibo-crawler#3程序设置
+2023-08-17 09:44:19,802 - ERROR - weibo.py[:2008] - config.json 格式不正确，请参考 https://github.com/dataabc/weibo-crawler#3程序设置
+2023-08-20 14:22:57,763 - ERROR - weibo.py[:2008] - config.json 格式不正确，请参考 https://github.com/dataabc/weibo-crawler#3程序设置
+2023-08-20 14:23:02,743 - ERROR - weibo.py[:2008] - config.json 格式不正确，请参考 https://github.com/dataabc/weibo-crawler#3程序设置
