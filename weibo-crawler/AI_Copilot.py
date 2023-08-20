@@ -27,7 +27,7 @@ def read_and_concat_weibo_texts(folder_path):
         return f"文件 {file_path} 不存在"
 
 def generate_ai_report(long_text):
-    openai.api_key = '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'
+    openai.api_key = 'YOUR KEY'
     # 通过 `系统(system)` 角色给 `助手(assistant)` 角色赋予一个人设
     messages = [{'role': 'system', 'content': '你是一个专业的财经分析师。你主要关注人工智能技术的发展和遇到的伦理和监管挑战。'}]
     # 在 messages 中加入 `用户(user)` 角色提出第 1 个问题
